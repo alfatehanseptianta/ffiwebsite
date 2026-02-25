@@ -17,11 +17,17 @@
 }
 
 .card_blue {
-  background: linear-gradient(180deg, #ffffff, #fbf5ea);
+  background:
+    radial-gradient(circle at 84% 10%, rgba(111, 155, 68, 0.12), transparent 38%),
+    radial-gradient(circle at 12% 92%, rgba(186, 58, 46, 0.07), transparent 42%),
+    linear-gradient(160deg, #fff, #f9f5eb);
 }
 
 .card_green {
-  background: linear-gradient(180deg, #ffffff, #f6fbf4);
+  background:
+    radial-gradient(circle at 84% 10%, rgba(111, 155, 68, 0.14), transparent 38%),
+    radial-gradient(circle at 12% 92%, rgba(111, 155, 68, 0.07), transparent 42%),
+    linear-gradient(160deg, #fff, #f4fbf1);
 }
 
 .header {

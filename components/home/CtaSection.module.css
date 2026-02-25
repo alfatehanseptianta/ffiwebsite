@@ -19,6 +19,17 @@
   overflow: hidden;
 }
 
+.shell::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue), var(--gold), var(--green));
+  opacity: 0.9;
+  z-index: 2;
+  pointer-events: none;
+}
+
 .shell::after {
   content: "";
   position: absolute;

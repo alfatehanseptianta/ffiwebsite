@@ -13,21 +13,28 @@
   flex-direction: column;
   border-radius: 18px;
   overflow: hidden;
-  border: 1px solid var(--line);
-  background: #fff;
+  border: 1px solid rgba(228, 220, 203, 0.88);
+  background: rgba(255, 255, 255, 0.78);
   box-shadow: var(--shadow-md);
+  backdrop-filter: blur(4px);
 }
 
 .card_blue {
-  background: linear-gradient(180deg, #ffffff 40%, #fbf5ea);
+  background:
+    radial-gradient(circle at 90% 8%, rgba(186, 58, 46, 0.07), transparent 38%),
+    linear-gradient(180deg, #ffffff 40%, #fbf5ea);
 }
 
 .card_green {
-  background: linear-gradient(180deg, #ffffff 40%, #f4fbf1);
+  background:
+    radial-gradient(circle at 90% 8%, rgba(111, 155, 68, 0.09), transparent 38%),
+    linear-gradient(180deg, #ffffff 40%, #f4fbf1);
 }
 
 .card_deep {
-  background: linear-gradient(180deg, #ffffff 40%, #eef7ea);
+  background:
+    radial-gradient(circle at 90% 8%, rgba(111, 155, 68, 0.08), transparent 38%),
+    linear-gradient(180deg, #ffffff 40%, #eef7ea);
 }
 
 .imageWrap {
