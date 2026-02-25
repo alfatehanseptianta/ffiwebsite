@@ -6,9 +6,9 @@
 :root {
   --background: #fbf7ee;
   --foreground: #1f231b;
-  --card: #ffffff;
+  --card: #fefcf8;
   --card-foreground: #1f231b;
-  --popover: #ffffff;
+  --popover: #fefcf8;
   --popover-foreground: #1f231b;
   --primary: #ba3a2e;
   --primary-foreground: oklch(1 0 0);
@@ -50,6 +50,9 @@
   --surface-1: #ffffff;
   --surface-2: #fbf7ee;
   --surface-3: #f6efe2;
+
+  /* Site layout tokens (mirrors globals.css) */
+  --container: 1200px;
 }
 
 .dark {

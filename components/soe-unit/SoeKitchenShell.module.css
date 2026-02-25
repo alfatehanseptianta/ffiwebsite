@@ -516,6 +516,22 @@
   z-index: 85 !important;
 }
 
+/* Align Kitchen secondary nav content to site container width */
+.dashboardHost > :global(div) > :global(nav) > :global(div) {
+  max-width: var(--container) !important;
+  margin-inline: auto !important;
+  padding-inline: 1rem !important;
+}
+
+/* Align Kitchen main content to site container width */
+.dashboardHost > :global(div.ffi-kitchen-dashboard) > :global(main) {
+  max-width: var(--container) !important;
+  margin-inline: auto !important;
+  padding-inline: 1rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
 @media (max-width: 1100px) {
   .heroGrid {
     grid-template-columns: 1fr;
