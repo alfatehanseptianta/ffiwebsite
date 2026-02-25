@@ -1,0 +1,597 @@
+.pageRoot {
+  position: relative;
+  overflow-x: clip;
+}
+
+.bgOrbA,
+.bgOrbB {
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 999px;
+  filter: blur(18px);
+}
+
+.bgOrbA {
+  width: 18rem;
+  height: 18rem;
+  top: 4rem;
+  left: -4rem;
+  background: radial-gradient(circle, rgba(186, 58, 46, 0.16), rgba(186, 58, 46, 0));
+}
+
+.bgOrbB {
+  width: 20rem;
+  height: 20rem;
+  top: 9rem;
+  right: -5rem;
+  background: radial-gradient(circle, rgba(111, 155, 68, 0.18), rgba(111, 155, 68, 0));
+}
+
+.heroSection {
+  position: relative;
+  z-index: 1;
+  padding-top: 1.5rem;
+  padding-bottom: 1.25rem;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.95fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.heroCopy {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(circle at 90% 12%, rgba(111, 155, 68, 0.08), transparent 38%),
+    radial-gradient(circle at 8% 10%, rgba(186, 58, 46, 0.08), transparent 38%),
+    rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-sm);
+  padding: 1rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.heroTop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.liveBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 999px;
+  border: 1px solid rgba(43, 86, 54, 0.18);
+  background: rgba(43, 86, 54, 0.08);
+  color: var(--deep-blue);
+  padding: 0.38rem 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.liveBadge::before {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: #6f9b44;
+  box-shadow: 0 0 0 6px rgba(111, 155, 68, 0.12);
+}
+
+.heroCopy :global(.displayTitle) {
+  margin: 0;
+  max-width: 18ch;
+  text-transform: none;
+  font-size: clamp(1.65rem, 3vw, 2.85rem);
+  line-height: 1.04;
+}
+
+.heroDescription {
+  margin: 0;
+  color: var(--muted);
+  max-width: 64ch;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.badges span {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(186, 58, 46, 0.14);
+  background: rgba(186, 58, 46, 0.05);
+  color: var(--deep-blue);
+  padding: 0.36rem 0.65rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.metricCard {
+  border: 1px solid rgba(186, 58, 46, 0.1);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.78);
+  padding: 0.75rem 0.7rem;
+  display: grid;
+  gap: 0.18rem;
+  box-shadow: 0 8px 20px rgba(31, 35, 27, 0.04);
+}
+
+.metricCard strong {
+  font-family: var(--font-display), sans-serif;
+  font-size: 1rem;
+  line-height: 1.05;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.metricCard span {
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.primaryButton,
+.secondaryButton,
+.ghostButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 0.76rem 1rem;
+  font-weight: 700;
+  transition:
+    transform 180ms var(--ease),
+    box-shadow 180ms var(--ease),
+    background-color 180ms var(--ease),
+    border-color 180ms var(--ease);
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, var(--blue), #cc6333);
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(186, 58, 46, 0.18);
+}
+
+.secondaryButton {
+  border: 1px solid rgba(43, 86, 54, 0.15);
+  background: rgba(111, 155, 68, 0.07);
+  color: var(--deep-blue);
+}
+
+.ghostButton {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--ink);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover,
+.ghostButton:hover,
+.primaryButton:focus-visible,
+.secondaryButton:focus-visible,
+.ghostButton:focus-visible {
+  transform: translateY(-1px);
+}
+
+.secondaryButton:hover,
+.secondaryButton:focus-visible {
+  border-color: rgba(43, 86, 54, 0.28);
+  background: rgba(111, 155, 68, 0.12);
+}
+
+.ghostButton:hover,
+.ghostButton:focus-visible {
+  border-color: rgba(186, 58, 46, 0.2);
+}
+
+.quickLinksWrap {
+  display: grid;
+  gap: 0.45rem;
+  padding-top: 0.15rem;
+}
+
+.quickLinksTitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.quickLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.quickLink {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(228, 220, 203, 0.95);
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--ink);
+  padding: 0.38rem 0.68rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: border-color 180ms var(--ease), transform 180ms var(--ease), box-shadow 180ms var(--ease);
+}
+
+.quickLink:hover,
+.quickLink:focus-visible {
+  border-color: rgba(186, 58, 46, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(31, 35, 27, 0.05);
+}
+
+.noteCard {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(circle at 84% 10%, rgba(111, 155, 68, 0.12), transparent 38%),
+    radial-gradient(circle at 12% 92%, rgba(186, 58, 46, 0.07), transparent 42%),
+    linear-gradient(160deg, #fff, #f9f5eb);
+  box-shadow: var(--shadow-md);
+  padding: 1rem;
+  display: grid;
+  align-content: start;
+  gap: 0.8rem;
+}
+
+.noteCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+
+.signalTag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: rgba(186, 58, 46, 0.08);
+  color: var(--blue);
+  border: 1px solid rgba(186, 58, 46, 0.14);
+  padding: 0.35rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.noteEyebrow {
+  margin: 0;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  font-size: 0.74rem;
+}
+
+.noteText {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.signalPanel {
+  border: 1px solid rgba(186, 58, 46, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 14px;
+  padding: 0.75rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.signalTitle {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.83rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.noteList {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  display: grid;
+  gap: 0.38rem;
+  font-size: 0.84rem;
+  line-height: 1.35;
+}
+
+.dashboardSection {
+  position: relative;
+  z-index: 1;
+  padding-top: 0.9rem;
+  padding-bottom: 1.1rem;
+}
+
+.dashboardFrame {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius-xl) + 4px);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.7)),
+    radial-gradient(circle at 100% 0%, rgba(111, 155, 68, 0.06), transparent 30%);
+  box-shadow: 0 22px 50px rgba(8, 26, 43, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 0.65rem;
+  overflow: clip;
+}
+
+.dashboardAccent {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue), var(--gold), var(--green));
+  opacity: 0.9;
+}
+
+.dashboardHeader {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  border: 1px solid rgba(186, 58, 46, 0.09);
+  border-radius: 14px;
+  background: linear-gradient(140deg, rgba(186, 58, 46, 0.04), rgba(111, 155, 68, 0.06));
+  padding: 0.85rem 0.95rem;
+  margin-bottom: 0.45rem;
+  margin-top: 0.2rem;
+}
+
+.dashboardEyebrow {
+  margin: 0 0 0.2rem;
+  font-size: 0.72rem;
+  line-height: 1;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+}
+
+.dashboardTitle {
+  margin: 0;
+  font-family: var(--font-display), sans-serif;
+  letter-spacing: -0.02em;
+  font-size: 1.15rem;
+  color: var(--ink);
+}
+
+.dashboardMeta {
+  margin: 0;
+  max-width: 34ch;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.35;
+  text-align: right;
+}
+
+.dashboardToolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.2rem 0.3rem 0.55rem;
+  flex-wrap: wrap;
+}
+
+.toolbarChip,
+.toolbarChipActive {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.34rem 0.62rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.toolbarChip {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(228, 220, 203, 0.95);
+  color: var(--muted);
+}
+
+.toolbarChipActive {
+  background: rgba(186, 58, 46, 0.08);
+  border: 1px solid rgba(186, 58, 46, 0.16);
+  color: var(--blue);
+}
+
+.toolbarDivider {
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 999px;
+  background: rgba(186, 58, 46, 0.22);
+}
+
+.dashboardHost {
+  position: relative;
+  border-radius: 16px;
+  overflow: clip;
+}
+
+.dashboardHost > :global(div) {
+  min-height: auto !important;
+  background: transparent !important;
+}
+
+.dashboardHost > :global(div.ffi-kitchen-dashboard) {
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(111, 155, 68, 0.05), transparent 26%),
+    radial-gradient(circle at 0% 0%, rgba(186, 58, 46, 0.04), transparent 28%);
+}
+
+.dashboardHost > :global(div.ffi-kitchen-dashboard) :global(main) {
+  gap: 1.8rem;
+}
+
+.dashboardHost > :global(div.ffi-kitchen-dashboard) :global(.bg-card) {
+  border-color: rgba(228, 220, 203, 0.88) !important;
+}
+
+.dashboardHost > :global(div.ffi-kitchen-dashboard) :global(.rounded-2xl) {
+  border-radius: 18px !important;
+}
+
+.dashboardHost > :global(div.ffi-kitchen-dashboard) :global(.rounded-xl) {
+  border-radius: 14px !important;
+}
+
+.dashboardHost > :global(div.ffi-kitchen-dashboard) :global(h1),
+.dashboardHost > :global(div.ffi-kitchen-dashboard) :global(h2),
+.dashboardHost > :global(div.ffi-kitchen-dashboard) :global(h3) {
+  letter-spacing: -0.02em;
+}
+
+.dashboardHost > :global(div.ffi-kitchen-dashboard) :global(h2),
+.dashboardHost > :global(div.ffi-kitchen-dashboard) :global(h3) {
+  line-height: 1.12;
+}
+
+.dashboardHost > :global(div.ffi-kitchen-dashboard) :global(.text-muted-foreground) {
+  color: #66705f !important;
+}
+
+.dashboardHost > :global(div.ffi-kitchen-dashboard) :global(.tracking-widest) {
+  letter-spacing: 0.14em !important;
+}
+
+.dashboardHost > :global(div.ffi-kitchen-dashboard) :global(.p-6) {
+  padding: 1.35rem !important;
+}
+
+.dashboardHost > :global(div.ffi-kitchen-dashboard) :global(.p-5) {
+  padding: 1.05rem !important;
+}
+
+.dashboardHost > :global(div.ffi-kitchen-dashboard) :global(.p-4) {
+  padding: 0.9rem !important;
+}
+
+.dashboardHost > :global(div.ffi-kitchen-dashboard) :global(.text-xs) {
+  line-height: 1.35;
+}
+
+.dashboardHost > :global(div) > :global(footer) {
+  display: none !important;
+}
+
+.dashboardHost > :global(div) > :global(nav) {
+  top: 5.8rem !important;
+  z-index: 85 !important;
+}
+
+@media (max-width: 1100px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .metricsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboardHeader {
+    flex-direction: column;
+  }
+
+  .dashboardMeta {
+    max-width: none;
+    text-align: left;
+  }
+}
+
+@media (max-width: 980px) {
+  .dashboardHost > :global(div) > :global(nav) {
+    top: 4.8rem !important;
+  }
+
+  .dashboardHost > :global(div.ffi-kitchen-dashboard) :global(main) {
+    gap: 1.35rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding-top: 1rem;
+  }
+
+  .heroTop {
+    align-items: flex-start;
+  }
+
+  .heroCopy,
+  .noteCard {
+    padding: 0.9rem;
+  }
+
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    gap: 0.45rem;
+  }
+
+  .primaryButton,
+  .secondaryButton,
+  .ghostButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .noteCardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboardFrame {
+    padding: 0.4rem;
+  }
+
+  .dashboardToolbar {
+    padding-inline: 0.15rem;
+  }
+
+  .dashboardHost > :global(div.ffi-kitchen-dashboard) :global(.p-6) {
+    padding: 1.05rem !important;
+  }
+
+  .dashboardHost > :global(div.ffi-kitchen-dashboard) :global(.p-5) {
+    padding: 0.9rem !important;
+  }
+}

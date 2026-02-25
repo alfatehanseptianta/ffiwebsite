@@ -1,0 +1,76 @@
+.section {
+  padding-top: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  padding: 1.1rem;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: #fff;
+  box-shadow: var(--shadow-md);
+}
+
+.card_blue {
+  background: linear-gradient(180deg, #ffffff, #fbf5ea);
+}
+
+.card_green {
+  background: linear-gradient(180deg, #ffffff, #f6fbf4);
+}
+
+.header {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.badge {
+  width: fit-content;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(186, 58, 46, 0.08);
+  border: 1px solid rgba(186, 58, 46, 0.12);
+  color: var(--deep-blue);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.card_green .badge {
+  background: rgba(111, 155, 68, 0.1);
+  border-color: rgba(111, 155, 68, 0.15);
+  color: #42652b;
+}
+
+.header h3 {
+  margin: 0;
+  font-family: var(--font-display), sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.card ul {
+  margin: 0.9rem 0 0;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.55rem;
+  color: var(--muted);
+}
+
+.card li::marker {
+  color: var(--blue);
+}
+
+.card_green li::marker {
+  color: var(--green);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
